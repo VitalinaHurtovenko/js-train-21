@@ -29,39 +29,54 @@
 
 class Musician {
   // статичне поле count, яке відслідковує кількість музикантів, початкове значення 0
+  static count = 0;
   // Об'являємо приватні поля #name; #instrument;
+  #name = ;
+  #instrument;
 
   constructor(name, instrument) {
     // Конструктор приймає два параметри: name та instrument
+    this.name = name;
+    this.instrument = instrument;
     // присвоєння вхідного значення name до приватного поля #name
+    this.#name = name;
     // присвоєння вхідного значення instrument до приватного поля #instrument
+    this.#instrument = instrument;
     // збільшення значення статичного поля на 1
+    this.count++;
   }
 
   get name() {
     // гетер для приватного поля #name
     // повертає значення приватного поля #name
+    return this.#name;
   }
 
   get instrument() {
     // гетер для приватного поля #instrument
     // повертає значення приватного поля #instrument
+    return this.#instrument;
   }
 
   set name(newName) {
     // сетер для приватного поля #name
     // присвоює нове значення приватному полю #name
+    this.#name = newName;
   }
 
   set instrument(newInstrument) {
     // сетер для приватного поля #instrument
     // присвоює нове значення приватному полю #instrument
+    this.#instrument = newInstrument;
   }
 
   play() {
     // метод, що виводить рядок в консоль <#name> грає на <#instrument>
+    console.log(`${this.name} грає на ${this.#instrument}`);
   }
 }
+
+console.log(Musician.name);
 
 /*
  * Клас: Guitarist
